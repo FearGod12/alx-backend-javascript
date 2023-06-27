@@ -9,7 +9,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
         if (result.status === 'fulfilled') {
           myarray.push({ status: result.status, value: result.value });
         } else {
-          myarray.push({ status: result.status, value: result.reason });
+          myarray.push({ status: result.status, value: String(result.reason) });
         }
       });
       return myarray;
