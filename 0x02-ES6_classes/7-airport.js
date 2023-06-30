@@ -7,6 +7,7 @@ export default class Airport {
   get name() {
     return this._name;
   }
+
   set name(name) {
     if (typeof name === 'string') {
       this._name = name;
@@ -28,6 +29,6 @@ export default class Airport {
   }
 
   toString() {
-    return `[object ${this.code}]`;
+    return `[${this.code}]`;
   }
 }
