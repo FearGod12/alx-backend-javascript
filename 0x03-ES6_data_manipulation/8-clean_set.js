@@ -2,7 +2,11 @@ export default function cleanSet(set, startString) {
   if (startString === '') {
     return '';
   }
-  const filtered = Array.from(set).filter((item) => item.startsWith(startString));
-  const mapped = filtered.map((item) => item.slice(startString.length));
-  return mapped.join('-');
+  const string = [];
+  set.forEach((each) => {
+    if (each.startsWith(startString)) {
+      string.push(each.slice(startString.length));
+    }
+  });
+  return string.join('-');
 }
