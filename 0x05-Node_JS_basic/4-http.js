@@ -7,9 +7,9 @@ const app = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.write('Hello Holberton School!');
-  res.end()
+  res.end();
 });
 
 app.listen(port, hostname);
 
-module.exports = app
+module.exports = app;
