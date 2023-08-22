@@ -10,10 +10,13 @@ const app = http.createServer(async (req, res) => {
     res.end();
   } else if (req.url === '/students') {
     res.write('This is the list of our students\n');
-    const { students, csStudents, sweStudents } = await countStudents(process.argv[2]);
-    res.write(`Number of students: ${students.length}\n`);
-    res.write(`Number of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}\n`);
-    res.write(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}\n`);
+    try {
+      const { students, csStudents, sweStudents } = await countStudents(process.argv[2]);
+      res.write(`Number of students: ${students.length}\n`);
+      res.write(`Number of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}\n`);
+      res.write(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}\n`);
+    } catch (err) { res.end(err.message); }
+
     res.end();
   }
 });
