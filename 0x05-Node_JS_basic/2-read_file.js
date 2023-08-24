@@ -23,7 +23,7 @@ function countStudent (path) {
   console.log(`Number of students in CS: ${CS.length}. List: ${CS.join(', ')}`);
 
   console.log(`Number of students in SWE: ${SWE.length}. List: ${SWE.join(', ')}`);
-  return { dbdata, SWE, CS }
+  return { dbdata, SWE, CS };
 }
 
 module.exports = countStudent;
