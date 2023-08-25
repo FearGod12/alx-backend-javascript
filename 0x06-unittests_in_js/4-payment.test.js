@@ -10,7 +10,8 @@ describe('sendPaymentRequestToApi', function () {
     stub = sinon.stub(Utils, 'calculateNumber');
     stub.returns(10);
     spy = sinon.spy(console, 'log');
-    sendPaymentRequestToApi(100, 20);
+    
+    expect(sendPaymentRequestToApi(100, 20)).to.be.undefined
 
     expect(stub.calledOnceWith('SUM', 100, 20)).to.be.true;
     expect(spy.calledWith('The total is: 10')).to.be.true;
